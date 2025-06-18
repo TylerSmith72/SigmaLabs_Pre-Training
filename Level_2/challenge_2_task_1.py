@@ -15,9 +15,9 @@ def get_user_input():
     
 def check_user_guess(random_num, user_num):
     result = ""
-    if user_num < random_num:
+    if random_num < user_num:
         result = "higher"
-    elif user_num > random_num:
+    elif random_num > user_num:
         result = "lower"
     else:
         result = "correct"
@@ -38,9 +38,9 @@ def guess_loop(random_num):
         if result == "correct":
             print(f"You Won! You guessed the number {random_num} in {len(attempts)} attempts.")
             break
-        elif result == "higher":
-            print("Your guess is too low. Try again.")
         elif result == "lower":
+            print("Your guess is too low. Try again.")
+        elif result == "higher":
             print("Your guess is too high. Try again.")
     
 def check_play_again():
